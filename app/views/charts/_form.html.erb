@@ -1,0 +1,6 @@
+<%= form_for @chart do |f| %>
+    <%= f.label :genre %>
+    <%= f.text_field :genre, required: true %>
+    <%= f.submit  %>
+<% end %>
+<%= link_to 'Back to All', charts_path %>

@@ -1,2 +1,4 @@
-<h1>Charts#show</h1>
-<p>Find me in app/views/charts/show.html.erb</p>
+<h1><%= @chart.genre %></h1>
+<%= link_to 'Edit', edit_chart_path %>
+<%= link_to 'Remove', chart_path, method: :delete %>
+<%= link_to 'Back to All', charts_path %>

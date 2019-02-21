@@ -43,7 +43,7 @@ class ChartsController < ApplicationController
 
   private
     def chart_params
-      params.require(:chart).permit(:name)
+      params.require(:chart).permit(:genre)
     end
 
     def set_chart
