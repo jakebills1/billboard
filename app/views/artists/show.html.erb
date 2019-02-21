@@ -4,6 +4,11 @@
     <p></p>
     <img src="https://robohash.org/<%= @artist.picture %>?set=set2" />
 </div>
+<% @artist.songs.each do |song| %>
+    <%= render 'songs/song', { song: song } %>
+<% end %>
+
+<%= link_to 'Add a song', new_artist_song_path(@artist) %>
 <%= link_to 'Back', artists_path %>
 <%= link_to 'Edit', edit_artist_path(@artist) %>
 <%= link_to 'Remove', artist_path(@artist), method: :delete %>
