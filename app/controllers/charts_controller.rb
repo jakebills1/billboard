@@ -1,6 +1,6 @@
 class ChartsController < ApplicationController
   before_action :set_chart, only: [:show, :update, :edit, :destroy]
-
+  before_action :set_songs
   def index
     @charts = Chart.all
   end
@@ -48,6 +48,10 @@ class ChartsController < ApplicationController
 
     def set_chart
       @chart = Chart.find(params[:id])
+    end
+
+    def set_songs
+      @songs = Song.all
     end
 
 end
