@@ -1,7 +1,7 @@
 <div class="ui card">
     <h1><%= @chart.genre %></h1>
 
-    <% @chart.songs.each_with_index do |song, index| %>
+    <% @chart.songs.shuffle.each_with_index do |song, index| %>
         <%= "##{index + 1} #{song.title} - #{song.artist.name}" %>
         <br/>
     <% end %>
