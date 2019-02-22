@@ -1,8 +1,9 @@
 <div class="ui card">
     <h1><%= @chart.genre %></h1>
 
-    <% @chart.songs.each do |song| %>
-        <%= song.title %> 
+    <% @chart.songs.each_with_index do |song, index| %>
+        <%= "##{index + 1} #{song.title} - #{song.artist.name}" %>
+        <br/>
     <% end %>
     
     <%= link_to 'Edit', edit_chart_path %>
