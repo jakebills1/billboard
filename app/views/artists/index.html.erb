@@ -1,4 +1,4 @@
-<h1>List of all Artists</h1>
+<h1 class="ui header">List of all Artists</h1>
 <% @artists.each do |artist|%>
     <div>
         <%= artist.name %>
@@ -7,4 +7,5 @@
 <% end %>
 <div>
     <%= link_to 'New artist', new_artist_path %>
+    <%= link_to 'Back', root_path %>
 </div>

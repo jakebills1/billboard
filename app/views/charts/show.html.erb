@@ -1,10 +1,13 @@
-<h1><%= @chart.genre %></h1>
-<%= @songs.each do |song| %>
-    <%= if song.charting %>
-        <%= song.name %> - <%= song.length %>
-    <% end %>
-<% end %>
+<div class="ui card">
+    <h1><%= @chart.genre %></h1>
 
-<%= link_to 'Edit', edit_chart_path %>
-<%= link_to 'Remove', chart_path, method: :delete %>
-<%= link_to 'Back to All', charts_path %>
+    <% @chart.songs.each do |song| %>
+        <%= song.title %> 
+    <% end %>
+    
+    <%= link_to 'Edit', edit_chart_path %>
+    <%= link_to 'Remove', chart_path, method: :delete %>
+    <%= link_to 'Back to All', charts_path %>
+
+
+</div>
