@@ -9,7 +9,7 @@
     <%= f.label :length %>
     <%= f.number_field :length, step: 0.01 %>
     
-    <%= f.label :chart_id, "Select a chart, or nil if not charting " %>
-    <%= f.select  :chart_id, options_for_select([nil, 8]) %>
+    <%= f.label :chart_id, "Select a chart" %>
+    <%= f.select  :chart_id, options_for_select([['none', nil], ['Top 100 US', 9], ['Top 100 Euro', 10], ['Hot 100', 11]]) %>
     <%= f.submit %>
 <% end %>
