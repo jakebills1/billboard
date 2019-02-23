@@ -1,11 +1,36 @@
-<h1 class="ui header">List of all Artists</h1>
-<% @artists.each do |artist|%>
-    <div>
-        <%= artist.name %>
-        <%= link_to 'View artist', artist_path(artist) %>
-    </div>
-<% end %>
-<div>
-    <%= link_to 'New artist', new_artist_path %>
-    <%= link_to 'Back', root_path %>
+<div class="container">
+
 </div>
+<h1 class="ui header centered">List of all Artists</h1>
+<hr>
+<div class="artist-view-container">
+    <% @artists.each do |artist|%>
+        <div class="ui card">
+            <h2 class="ui header centered" style="margin-top: 5px; margin-bottom: 5px;">
+                <%= artist.name %>
+            </h2>
+            <img class="ui image" src="https://robohash.org/<%= artist.picture %>?set=set2" />
+            <hr style="width: 100%">
+            <%  artist.songs.each do |song| %>
+                <ul id="song-list">
+                    <li><%= render 'songs/song', { song: song } %></li>
+                </ul>
+            <% end %>
+            <div class="ui buttons">
+                <button class="button"><%= link_to 'Add a song', new_artist_song_path(artist) %></button>
+                <button class="button"><%= link_to 'Edit Artist', edit_artist_path(artist) %></button>
+                <button class="button"><%= link_to 'Remove Artist', artist_path(artist), method: :delete %></button>
+            </div>
+        </div>
+    <% end %>
+
+</div>
+<div class="extra content">
+    <p class="header right">
+        <%= link_to 'New artist', new_artist_path %>
+    </p>
+    <p class="header right">
+        <%= link_to 'Back', root_path %>
+    </p>
+</div>
+
