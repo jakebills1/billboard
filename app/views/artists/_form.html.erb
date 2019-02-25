@@ -1,8 +1,13 @@
-<%= form_for @artist do |f|%>
-    <%= f.label :name  %>
-    <%= f.text_field :name %>
-    <%= f.label :picture  %>
-    <%= f.text_field :picture %>
+<%= form_with(model: @artist, local: true, class: "ui form") do |f|%>
+    <div class="field">
+        <%= f.label :name  %>
+        <%= f.text_field :name %>
+    </div>
+    <div class="field">
+        <%= f.label :picture  %>
+        <%= f.text_field :picture %>
+    </div>
+
     <%= f.submit %>
 <% end %>
 <%= link_to 'Back to Artists', artists_path %>

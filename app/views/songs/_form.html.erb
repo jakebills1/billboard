@@ -1,15 +1,25 @@
 <h1>Add a song</h1>
-<%= form_for [@artist, @song] do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
 
-    <%= f.label :genre %>
-    <%= f.text_field :genre %>
+<%= form_with(model: [@artist, @song], local: true, class: "ui form" ) do |f| %>
+    <div class="field">
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+    </div>
 
-    <%= f.label :length %>
-    <%= f.number_field :length, step: 0.01 %>
-    
-    <%= f.label :chart_id, "Select a chart" %>
-    <%= f.select  :chart_id, options_for_select([['none', nil], ['Top 100 US', 9], ['Top 100 Euro', 10], ['Hot 100', 11]]) %>
-    <%= f.submit %>
+    <div class="field">
+        <%= f.label :genre %>
+        <%= f.text_field :genre %>
+    </div>
+
+    <div class="field">
+        <%= f.label :length %>
+        <%= f.number_field :length, step: 0.01 %>
+    </div>
+
+    <div class="field">
+        <%= f.label :chart_id, "Select a chart" %>
+        <%= f.select  :chart_id, options_for_select([['none', nil], ['Top 100 US', 9], ['Top 100 Euro', 10], ['Hot 100', 11]]) %>
+    </div>
+
+    <%= f.submit nil, class: "ui button" %>
 <% end %>

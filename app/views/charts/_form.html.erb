@@ -1,6 +1,10 @@
-<%= form_for @chart do |f| %>
-    <%= f.label :genre %>
-    <%= f.text_field :genre, required: true %>
+<h1 class="ui header">Add a Chart</h1>
+<%= form_with(model: @chart, local: true, class: "ui form") do |f| %>
+    <div class="field">
+        <%= f.label :genre, "Name of Chart" %>
+        <%= f.text_field :genre, required: true %>
+    </div>
+
     <%= f.submit  %>
 <% end %>
 <%= link_to 'Back to All', charts_path %>

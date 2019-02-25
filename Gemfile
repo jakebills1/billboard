@@ -26,6 +26,7 @@ gem 'faker'
 gem 'semantic-ui-sass'
 gem 'jquery-rails'
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'devise'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
