@@ -1,0 +1,8 @@
+<h1>Add playlist</h1>
+<%= form_with(model: @playlist, local: true, class: "form") do |f| %>
+    <div class="field">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+    </div>
+    <%= f.submit %>
+<% end %>
