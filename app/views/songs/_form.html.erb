@@ -21,5 +21,9 @@
         <%= f.select  :chart_id, options_for_select([['none', nil], ['Top 100 US', 9], ['Top 100 Euro', 10], ['Hot 100', 11]]) %>
     </div>
 
+    <div class="field">
+        <%= f.label :playlist_id, "Add to Your Playlist" %>
+        <%= f.collection_select :playlist_id, current_user.playlists, :id, :name, :prompt => true %>
+    </div>
     <%= f.submit nil, class: "ui button" %>
 <% end %>

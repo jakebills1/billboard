@@ -1,10 +1,22 @@
-<h1 class="ui header">List of all Charts</h1>
-<% @charts.each do |chart|%>
-    <div>
-        <%= chart.genre %>
-        <%= link_to 'View Chart', chart_path(chart) %>
+<h1 class="ui header centered">List of all Charts</h1>
+<hr />
+    <div style="display: flex; justify-content: space-evenly;">
+        <% @charts.each do |chart|%>
+            <div class="ui card">
+                <h2 class="ui header centered">
+                    <%= chart.genre %>
+                </h2>
+
+                <% chart.songs.shuffle.each_with_index do |song, index| %>
+                    <%= "##{index + 1} #{song.title} - #{song.artist.name}" %>
+                <br/>
+                <% end %>
+                
+                <%= link_to 'Edit', edit_chart_path(chart) %>
+                <%= link_to 'Remove', chart_path(chart), method: :delete %>
+            </div>
+        <% end %>
     </div>
-<% end %>
 <div>
     <%= link_to 'New Chart', new_chart_path %>
     <%= link_to 'Back', root_path %>
